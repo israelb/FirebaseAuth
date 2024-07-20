@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Crafthub engine</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= javascript_importmap_tags %>
+
+    <script type="text/javascript">
+      window.firebaseConfig = <%= @firebase_config.to_json.html_safe %>;
+    </script>
+  </head>
+
+  <body>
+    <%= render 'layouts/flash' %>
+
+    <%= yield %>
+  </body>
+</html>
